@@ -1,0 +1,222 @@
+/* Blog Main Page Styles */
+.blog-page {
+    padding-bottom: 4rem;
+}
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Blog Card Styles */
+.blog-card {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    height: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.blog-image-wrapper {
+    width: 350px;
+    min-width: 350px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.blog-card:hover .blog-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.blog-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.blog-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+}
+
+.blog-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.blog-author {
+    color: #2563eb;
+    font-weight: 500;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.blog-author::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #d1d5db;
+}
+
+.blog-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.blog-excerpt {
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    flex: 1;
+    line-height: 1.6;
+    font-size: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 
+   BLOG POST DETAIL STYLES - Enhanced Typography & Layout 
+*/
+.blog-post-page .page-header {
+    background: transparent;
+    padding: 2rem 0 1rem 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 0;
+}
+
+.blog-post-page h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.blog-content-wrapper {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* Lighter shadow */
+    border: 1px solid #eee;
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.blog-hero-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    /* Removes inline spacing gap */
+}
+
+.article-content {
+    padding: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Georgia', serif;
+    /* Better reading font */
+    color: #333;
+    line-height: 1.9;
+    font-size: 1.15rem;
+}
+
+.article-content h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.article-content li {
+    margin-bottom: 0.75rem;
+}
+
+.article-content strong {
+    color: #111827;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .blog-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .blog-image-wrapper {
+        width: 100%;
+        min-width: 100%;
+        height: 240px;
+    }
+
+    .article-content {
+        padding: 2rem;
+        font-size: 1rem;
+    }
+
+    .blog-hero-image img {
+        height: 250px;
+    }
+}

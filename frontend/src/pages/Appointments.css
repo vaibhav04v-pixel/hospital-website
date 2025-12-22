@@ -1,0 +1,75 @@
+.appointments-page {
+  min-height: 100vh;
+  background: var(--gray-50);
+}
+
+.appointments-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.form-card {
+  padding: 2rem !important;
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.appointment-form h3 {
+  color: var(--gray-900);
+  margin: 0.5rem 0 0 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card {
+  padding: 1.5rem !important;
+}
+
+.info-card h3 {
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.info-card li {
+  margin-bottom: 0.5rem;
+  color: var(--gray-700);
+}
+
+.info-card p {
+  margin: 0.5rem 0;
+  color: var(--gray-700);
+}
+
+@media (max-width: 1024px) {
+  .appointments-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
