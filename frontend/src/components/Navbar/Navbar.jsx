@@ -1,7 +1,8 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Activity, LogOut, LayoutDashboard } from 'lucide-react';
+import { Menu, X, Activity, LogOut, LayoutDashboard, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../../context/ThemeContext';
 import './Navbar.css';
 
 const Navbar = ({ isAuthenticated, onLogout }) => {
@@ -9,6 +10,7 @@ const Navbar = ({ isAuthenticated, onLogout }) => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,6 +60,24 @@ const Navbar = ({ isAuthenticated, onLogout }) => {
 
         {/* Action Button */}
         <div className="navbar-actions desktop-menu">
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle"
+            aria-label="Toggle theme"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '0.5rem',
+              color: 'var(--gray-800)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginRight: '1rem'
+            }}
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <Link to="/appointments" className="btn btn-primary">
             Book Appointment
           </Link>
@@ -92,6 +112,33 @@ const Navbar = ({ isAuthenticated, onLogout }) => {
               {link.label}
             </Link>
           ))}
+
+          <button
+            onClick={() => {
+              toggleTheme();
+              setIsOpen(false);
+            }}
+            className="mobile-nav-link"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              width: '100%',
+              textAlign: 'left'
+            }}
+          >
+            {theme === 'dark' ? (
+              <>
+                <Sun size={20} style={{ marginRight: '0.5rem' }} /> Light Mode
+              </>
+            ) : (
+              <>
+                <Moon size={20} style={{ marginRight: '0.5rem' }} /> Dark Mode
+              </>
+            )}
+          </button>
 
           <Link
             to="/appointments"

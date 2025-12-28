@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { Toaster } from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 
+// Context
+import { ThemeProvider } from './context/ThemeContext';
+
 // Layout
 import Layout from './components/Layout/Layout';
 
@@ -41,24 +44,26 @@ function App() {
   };
 
   return (
-    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <Toaster position="top-center" />
-      <Routes>
-        {/* Public Routes - No Authentication Required */}
-        <Route element={<Layout isAuthenticated={false} onLogout={() => { }} />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/doctors" element={<Doctors />} />
-          <Route path="/appointments" element={<Appointments />} />
-          <Route path="/departments" element={<Departments />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-          <Route path="/contact" element={<Contact />} />
+    <ThemeProvider>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <Toaster position="top-center" />
+        <Routes>
+          {/* Public Routes - No Authentication Required */}
+          <Route element={<Layout isAuthenticated={false} onLogout={() => { }} />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/doctors" element={<Doctors />} />
+            <Route path="/appointments" element={<Appointments />} />
+            <Route path="/departments" element={<Departments />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/contact" element={<Contact />} />
 
-          {/* Redirect any other path to Home */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Route>
-      </Routes>
-    </Router>
+            {/* Redirect any other path to Home */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Route>
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

@@ -18,7 +18,7 @@ export const mockDepartments = [
       availability: '24/7'
     },
     doctors: 3,
-    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop'
+    image: '/departments/cardiology.jpg'
   },
   {
     id: 'DEPT002',
@@ -38,7 +38,7 @@ export const mockDepartments = [
       availability: '24/7'
     },
     doctors: 2,
-    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=400&fit=crop'
+    image: '/departments/neurology.jpg'
   },
   {
     id: 'DEPT003',
@@ -58,7 +58,7 @@ export const mockDepartments = [
       availability: '24/7'
     },
     doctors: 2,
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop'
+    image: '/departments/orthopedics.jpg'
   },
   {
     id: 'DEPT004',
@@ -78,7 +78,7 @@ export const mockDepartments = [
       availability: '24/7'
     },
     doctors: 1,
-    image: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&h=400&fit=crop'
+    image: '/departments/pediatrics.jpg'
   },
   {
     id: 'DEPT005',
@@ -98,7 +98,7 @@ export const mockDepartments = [
       availability: 'Mon-Fri'
     },
     doctors: 1,
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop'
+    image: '/departments/general_medicine.jpg'
   },
   {
     id: 'DEPT006',
@@ -118,7 +118,7 @@ export const mockDepartments = [
       availability: 'Mon-Sat'
     },
     doctors: 1,
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=400&fit=crop'
+    image: '/departments/dermatology.jpg'
   },
   {
     id: 'DEPT007',
@@ -138,7 +138,7 @@ export const mockDepartments = [
       availability: '24/7'
     },
     doctors: 8,
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop'
+    image: '/departments/emergency_medicine.jpg'
   },
   {
     id: 'DEPT008',
@@ -158,6 +158,6 @@ export const mockDepartments = [
       availability: '24/7'
     },
     doctors: 5,
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop'
+    image: '/departments/radiology.jpg'
   }
 ];
